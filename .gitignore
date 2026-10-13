@@ -1,0 +1,49 @@
+# 操作系统
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 编辑器
+.vscode/
+.idea/
+*.swp
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+build/
+dist/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.env
+
+# 数据与凭据（严禁提交）
+*.sql
+*.sql.gz
+*.db
+*.sqlite
+*.sqlite3
+*.mdb
+*.bak
+*.pem
+*.key
+*.pfx
+*.p12
+*.crt
+id_rsa*
+id_ed25519*
+cookie*.txt
+secrets.json
+
+# 构建产物与压缩包
+*.zip
+*.7z
+*.tar.gz
+*.exe
+*.dll
+*.so
+*.log

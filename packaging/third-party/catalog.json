@@ -1,0 +1,117 @@
+{
+  "format_version": 1,
+  "boundary": "Technical notice-copy inventory, not a legal audit or permission to distribute all binaries. Copy approvals apply only to the exact local notice bytes below; complete redistribution obligations remain unassessed.",
+  "components": [
+    {
+      "id": "cpython",
+      "expected_version": "3.14.7",
+      "license_declaration": "PSF License Version 2 and bundled third-party notices; additional Windows binary conditions",
+      "sources": [
+        "https://api.nuget.org/v3-flatcontainer/python/3.14.7/python.3.14.7.nupkg",
+        "https://docs.python.org/3.14/license.html"
+      ],
+      "pending": [
+        "The composite notice is not an exhaustive binary-to-static-dependency mapping.",
+        "Microsoft distributable-code restrictions require a separate distribution decision.",
+        "CPython's original SQLite DLL was replaced with SQLite 3.53.4; the runtime manifests record that change."
+      ]
+    },
+    {
+      "id": "wxpython",
+      "expected_version": "4.2.5",
+      "license_declaration": "wxWindows Library Licence, as declared by installed distribution",
+      "sources": ["https://wxpython.org/pages/license/", "https://wxwidgets.org/about/licence/"],
+      "pending": [
+        "wxWidgets 3.2.9 is identified by bundled PE version resources/build diagnostics, not by the wxPython version alone.",
+        "Static third-party code, wx.stc/Scintilla and siplib notices/versions are not exhaustively mapped by the wheel's top-level license."
+      ]
+    },
+    {
+      "id": "wxwidgets",
+      "expected_version": "3.2.9",
+      "license_declaration": "wxWindows Library Licence core text shipped in the wxPython wheel",
+      "sources": ["https://wxwidgets.org/about/licence/"],
+      "pending": [
+        "Version is self-reported by PE resources; the wheel's core license does not close all static third-party notice obligations."
+      ]
+    },
+    {
+      "id": "watchdog",
+      "expected_version": "6.0.0",
+      "license_declaration": "Apache-2.0, as declared by installed distribution",
+      "sources": ["https://github.com/gorakhargosh/watchdog/tree/v6.0.0"],
+      "pending": []
+    },
+    {
+      "id": "pyinstaller",
+      "expected_version": "6.22.3",
+      "license_declaration": "GPL-2.0-or-later with Bootloader-exception; runtime-hook terms are detailed in COPYING.txt",
+      "sources": ["https://pyinstaller.org/en/v6.22.3/license.html"],
+      "pending": [
+        "The installed bootloader source file is hashed separately. A combined Notes.exe is not byte-identical to runw.exe; exact embedded-code attribution is not proved by this inventory."
+      ]
+    },
+    {
+      "id": "sqlite",
+      "expected_version": "3.53.4",
+      "license_declaration": "Upstream public-domain statement; no standalone license file was found in the pinned DLL archive",
+      "sources": [
+        "https://sqlite.org/2026/sqlite-dll-win-x64-3530400.zip",
+        "https://sqlite.org/copyright.html"
+      ],
+      "pending": [
+        "The upstream declaration is a reference, not an archived original license notice or jurisdiction-specific legal conclusion."
+      ]
+    }
+  ],
+  "approved_notice_copies": [
+    {
+      "component": "cpython",
+      "source_root": "runtime",
+      "relative_path": "LICENSE.txt",
+      "sha256": "935cf13e19f8c31b497d20b05d73623431a226b230c3599bc30fa3348979bc68",
+      "reason": "The local PSF agreement permits reproduction/distribution subject to retaining notices; copy the entire composite notice unchanged, including additional Windows conditions."
+    },
+    {
+      "component": "wxpython",
+      "source_root": "venv",
+      "relative_path": "Lib/site-packages/wxpython-4.2.5.dist-info/licenses/LICENSE.txt",
+      "sha256": "0d5cca7fb8ee32d9313e3b1660a009846caaef4fe166e493c7ca4dfd95a0ab5c",
+      "reason": "Retain the locally shipped wxWindows license and exception notices verbatim; this does not resolve notices for every bundled static dependency."
+    },
+    {
+      "component": "wxwidgets",
+      "source_root": "venv",
+      "relative_path": "Lib/site-packages/wxpython-4.2.5.dist-info/licenses/LICENSE.txt",
+      "sha256": "0d5cca7fb8ee32d9313e3b1660a009846caaef4fe166e493c7ca4dfd95a0ab5c",
+      "reason": "The same wheel license explicitly covers the wxWidgets core. Preserve it unchanged; static/transitive notices remain pending."
+    },
+    {
+      "component": "watchdog",
+      "source_root": "venv",
+      "relative_path": "Lib/site-packages/watchdog-6.0.0.dist-info/LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "reason": "Apache-2.0 permits distribution subject to its conditions and retention of the license; copy this exact notice without edits."
+    },
+    {
+      "component": "watchdog",
+      "source_root": "venv",
+      "relative_path": "Lib/site-packages/watchdog-6.0.0.dist-info/COPYING",
+      "sha256": "39f081828db6f94c70123fa4fb30c1bce3e215a8fdece53a49991fe076a69c08",
+      "reason": "Retain the accompanying copyright and Apache-2.0 declaration with the original LICENSE."
+    },
+    {
+      "component": "pyinstaller",
+      "source_root": "venv",
+      "relative_path": "Lib/site-packages/pyinstaller-6.22.3.dist-info/licenses/COPYING.txt",
+      "sha256": "0598064c7d2718e38d7914a7d08343b2fa008e3bea9ebba2aa7a6ffa5900dd64",
+      "reason": "Retain the full locally distributed licensing terms including the bootloader exception and runtime-hook terms; no blanket application license conclusion is made."
+    }
+  ],
+  "native_followups": [
+    "For every native file, an exact source hash match proves byte identity only, not complete license coverage.",
+    "Resolve Microsoft MSVCP/VCRUNTIME redistribution terms for the exact shipped versions; do not infer permission from a filename or Python's license alone.",
+    "Resolve transitive/static notices for OpenSSL, Expat, liblzma/XZ, zlib-ng, libmpdec, Zstandard, libffi and wxWidgets integrations as applicable. The composite Python license contains some third-party texts but is not automatically mapped to all binaries.",
+    "Unmatched native files and distributions lacking original local notice text remain pending; this report is not a release/commercial-distribution approval."
+  ]
+}
